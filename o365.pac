@@ -63,7 +63,8 @@ function FindProxyForURL(url, host) {
     if (dnsDomainIs(host,"muskiz.com")) return "PROXY proxy.glb.mapfre.net:80";
     if (dnsDomainIs(host,"zierbena.net")) return "PROXY proxy.glb.mapfre.net:80";
     if (dnsDomainIs(host,"basauri.eus")) return "PROXY proxy.glb.mapfre.net:80";  
- 
+    if (isInNet(ip, "10.139.160.15", "255.255.255.0")) return "PROXY proxytal.glb.mapfre.net:80"; 
+    
   //URLs de Grecia
     if (dnsDomainIs(host,"ktelachaias.gr")) return "PROXY proxy.glb.mapfre.net:80";
     if (dnsDomainIs(host,"ktelmessinias.gr")) return "PROXY proxy.glb.mapfre.net:80";
@@ -289,7 +290,6 @@ function FindProxyForURL(url, host) {
         if (isInNet(ip, '10.96.146.0', '255.255.254.0')) return 'DIRECT';
         if (isInNet(ip, '10.96.160.0', '255.255.224.0')) return 'DIRECT';
         if (isInNet(ip, '10.97.96.0', '255.255.224.0')) return 'DIRECT';
-        if (isInNet(ip, '10.139.160.15', '255.255.255.0')) return 'DIRECT';
       }
 
     if (isInNet(ip, "10.224.0.0", "255.248.0.0")) return "PROXY proxytal.glb.mapfre.net:80";
